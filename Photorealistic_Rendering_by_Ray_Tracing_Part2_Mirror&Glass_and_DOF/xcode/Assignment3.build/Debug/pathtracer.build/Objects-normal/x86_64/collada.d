@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/scene/collada/collada.cpp \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/scene/collada/collada.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/CGL.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/misc.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/tinyexr.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/tinyxml2.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/scene/collada/camera_info.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/scene/collada/collada_info.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/matrix4x4.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/vector4D.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/vector3D.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/color.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/scene/collada/light_info.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/scene/collada/sphere_info.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/scene/collada/material_info.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/scene/collada/polymesh_info.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/vector2D.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/pathtracer/bsdf.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/CGL/include/CGL/matrix3x3.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/pathtracer/sampler.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/util/random_util.h \
+  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/src/util/image.h

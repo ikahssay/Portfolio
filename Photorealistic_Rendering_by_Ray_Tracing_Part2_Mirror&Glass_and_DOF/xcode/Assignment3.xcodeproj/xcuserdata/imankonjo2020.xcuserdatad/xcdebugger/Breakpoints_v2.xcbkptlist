@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "0EF87AEF-927E-4F39-9E14-8649EF4A2E5A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFD583AF-1574-4C7B-BF13-2EA795E97355"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/pathtracer/advanced_bsdf.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "BSDF::refract(wo, wi, ior)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.AddressBreakpoint">
+         <BreakpointContent
+            uuid = "DAF2C886-66B7-4625-A619-88F03CEEB4F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "*0x1000fa539">
+            <Locations>
+               <Location
+                  uuid = "DAF2C886-66B7-4625-A619-88F03CEEB4F6 - 20ccaa577278ac84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CGL::PathTracer::raytrace_pixel(unsigned long, unsigned long)"
+                  moduleName = "pathtracer"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "1305">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.AddressBreakpoint">
+         <BreakpointContent
+            uuid = "4719D70F-D520-4B7B-9757-5958FA29FF62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "*0x1000fa541">
+            <Locations>
+               <Location
+                  uuid = "4719D70F-D520-4B7B-9757-5958FA29FF62 - 20ccaa577278ac84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CGL::PathTracer::raytrace_pixel(unsigned long, unsigned long)"
+                  moduleName = "pathtracer"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "1313">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.AddressBreakpoint">
+         <BreakpointContent
+            uuid = "3C23C515-8068-4EEB-A6EC-65A253148D14"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "*0x1000fa535">
+            <Locations>
+               <Location
+                  uuid = "3C23C515-8068-4EEB-A6EC-65A253148D14 - 20ccaa577278ac84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CGL::PathTracer::raytrace_pixel(unsigned long, unsigned long)"
+                  moduleName = "pathtracer"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "1301">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

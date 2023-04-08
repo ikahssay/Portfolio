@@ -1,0 +1,82 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d9b1e92950ccd83f8c28e695f19b84ae29"
+    },
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d9ddcd5e03b37634494ac22b369772c4db"
+    },
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d96c3a239e117e63e44d332ae58080e763"
+    },
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d9aa97c7cc38b698593ef207303a9f9d2a"
+    },
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d956e13a3eb1d57d3e9fa65dbb96de3815"
+    },
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d9eb8ea5ab465015e7ac4e0c6d36ef3597"
+    },
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d945a4473bc8c16f0058e46f7781f786b1"
+    },
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d9f5d28b1af9cace4e8fd78ca0a4fab8c3"
+    },
+    {
+      "guid" : "71f0d349e9629bdf350f7c4ae11216d92f5b32d92981831ff9ed70f61dbdd308"
+    }
+  ],
+  "containerPath" : "/Users/imankonjo2020/Documents/CS_184_Intro_to_Computer_Graphics_and_Imaging/p3-1-pathtracer-sp22-whatissleep-3/xcode/Assignment3.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx12.1",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/imankonjo2020/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/imankonjo2020/Library/Developer/Xcode/DerivedData/Assignment3-cqpqrrgxdartrbcddbhrtqjmuhdj/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/imankonjo2020/Library/Developer/Xcode/DerivedData/Assignment3-cqpqrrgxdartrbcddbhrtqjmuhdj/Index/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

@@ -1,0 +1,82 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e40a3594359b35190542c6fe43b8ce3400"
+    },
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e45b8dab1fc1320c1df4d96434cd486bb8"
+    },
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e42048e04ce33e63679da43b9912e9817a"
+    },
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e4219f474f43243e3ffee674dcd857b598"
+    },
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e498db49b24ccc79a5c8a7e6f17a55d362"
+    },
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e4b7cbc96b9b803a3cc904a54141444bac"
+    },
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e41c872a9b552b629468cd7adb7d553fdd"
+    },
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e4de614134af075cd05c67b9257635f683"
+    },
+    {
+      "guid" : "da74676cc464aa81a9f078a669b930e46857e120110605564a38fd23c2ffb4c7"
+    }
+  ],
+  "containerPath" : "/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p4-clothsim-sp22-almost-done/xcode/ClothSim.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx12.1",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/imankonjo2020/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/imankonjo2020/Library/Developer/Xcode/DerivedData/ClothSim-gwssocedhhdeucdxbtjzlpimfqws/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/imankonjo2020/Library/Developer/Xcode/DerivedData/ClothSim-gwssocedhhdeucdxbtjzlpimfqws/Index/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

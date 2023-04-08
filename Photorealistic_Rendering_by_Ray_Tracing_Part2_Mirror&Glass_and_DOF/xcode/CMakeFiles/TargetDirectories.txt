@@ -1,0 +1,16 @@
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CMakeFiles/pathtracer.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CMakeFiles/install.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CMakeFiles/ZERO_CHECK.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/CMakeFiles/CGL.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/CMakeFiles/install.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/CMakeFiles/ALL_BUILD.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/CMakeFiles/ZERO_CHECK.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/deps/glew/CMakeFiles/glew.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/deps/glew/CMakeFiles/install.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/deps/glfw/CMakeFiles/uninstall.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/deps/glfw/CMakeFiles/install.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/deps/glfw/CMakeFiles/ALL_BUILD.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/deps/glfw/CMakeFiles/ZERO_CHECK.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/deps/glfw/src/CMakeFiles/glfw.dir
+/Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p3-2-pathtracer-sp22-whatissleep-3-2/xcode/CGL/deps/glfw/src/CMakeFiles/install.dir
