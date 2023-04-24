@@ -1,4 +1,0 @@
-dependencies: \
-  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p4-clothsim-sp22-almost-done/ext/nanogui/ext/glad/src/glad.c \
-  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p4-clothsim-sp22-almost-done/ext/nanogui/ext/glad/include/glad/glad.h \
-  /Users/imankonjo2020/Documents/CS_184_Foundation_of_Computer_Graphics_and_Imaging/p4-clothsim-sp22-almost-done/ext/nanogui/ext/glad/include/KHR/khrplatform.h
