@@ -2,10 +2,12 @@
 In this project, I built the core logic of the “2048” game - a popular single-player computer game written by Gabriele Cirulli. This game is compromised on a 4x4 grid of squares, each of which can either be empty or contain a tile bearing an integer - a power of 2 greater than or equal to 2. 
 
 <h> <b> How the game works: </b> </h>
+
 In this game, the player can choose a direction via their arrow keys to move all tiles either north, south, east, or west on the board . All tiles slide in that direction until there is no empty space left in the direction of motion. 
 When two adjacent tiles in the direction of motion have the same number, the tiles will <i>merge</i> into one tile containing double that initial number and will earn the player points. Each time two tiles merge to form a larger tile, the player earns the number of points on the new tile. The points will be tracked in the field called “Score” at the bottom of the screen and will be updated with each move. 
 
 Here are the full rules for when merges occur:
+
     1. Two tiles of the same value merge into one tile containing double the initial number.
     2. A tile that is the result of a merge will not merge again on that tilt. For example, if we have [X, 2, 2, 4], where X represents an empty space, and we move the tiles to the left, we should end up with [4, 4, X, X], not [8, X, X, X]. This is because the leftmost 4 was already part of a merge so should not merge again.
     3. When three adjacent tiles in the direction of motion have the same number, then the leading two tiles in the direction of motion merge, and the trailing tile does not. For example, if we have [X, 2, 2, 2] and move tiles left, we should end up with [4, 2, X, X] not [2, 4, X, X].
@@ -16,6 +18,7 @@ Here are the full rules for when merges occur:
 The game ends when the player has no available moves (when all tiles fill the board and no direction will merge tiles), or a move forms a tile containing the 2048 value. 
 
 <h> <b> How The Game is Modeled: </h> </b>
+
 The game exhibits two design patterns in common use: the <i> Model-View-Controller Pattern (MVC)</i>, and the <i> Observer Pattern </i>.
 
 The MVC pattern divides the problem into three parts:
