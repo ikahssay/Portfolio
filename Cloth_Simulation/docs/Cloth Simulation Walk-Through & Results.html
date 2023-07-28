@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS184 Cloth Sim</title>
+    <title>Cloth Simulation with Realistic Rendering</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Code+Pro&display=swap" rel="stylesheet">
@@ -63,17 +63,16 @@
 
 <body>
     <div class="wrapper">
-        <h1>CS184 Project 4: Cloth Simulation</h1>
-        <h4>By Lucy Lou and Iman Kahssay</h4>
+        <h1>Cloth Simulation with Realistic Rendering</h1>
+        <h4>By Iman Kahssay and Lucy Lou</h4>
         <br></br>
         <h2>Overview</h2>
-        <p>In this project, we implemented data structures and physics functions to simulate a cloth’s movement. In the first part, we built our grid of masses and springs that represent the cloth. In part 2, we integrated forces (such as gravity) into our
-            implementation, so the cloth would accurately fall and hang from pinned points. In part 3, we dealt with the cloth making collisions with other objects and planes, and in part 4, we handled self-collisions. In the last part, we wrote shader
-            programs to render different surfaces with lighting and textures.</p>
+        <p>In this project, we implemented data structures and physics functions to simulate a cloth’s movement. First, we built our grid of masses and springs that represent the cloth. Next, we integrated forces (such as gravity) into our implementation, so the cloth would accurately fall and hang from pinned points. Then, we dealt with the cloth making collisions with other objects and planes, and also handled self-collisions. Lastly, we wrote shader programs to render different surfaces with lighting and textures.</p>
         <br></br>
+        
+        
         <h2>Part 1: Masses and Springs</h2>
-        <p>Our cloth is modeled by a grid of evenly spaced point masses connected by springs. Each point mass contains attributes for its current position, last position forces, and whether it is “pinned” or not. The pinned value is for part 2, where we
-            “hang” the cloth from pinned points. Spring objects contain a rest length, the 2 point masses it connects to, and a spring type. We store our created point masses and springs in vectors to be used in the rest of the project. We implemented
+        <p>Our cloth is modeled by a grid of evenly spaced point masses connected by springs. Each point mass contains attributes for its current position, last position, forces, and whether it is “pinned” or not. The pinned value is for part 2, where we “hang” the cloth from pinned points. Spring objects contain a rest length, the 2 point masses it connects to, and a spring type. We store our created point masses and springs in vectors to be used in the rest of the project. We implemented
             3 different types of springs: structural, shearing, and bending.
         </p>
         <div class="img-grid">
@@ -101,8 +100,9 @@
             </figure>
         </div>
         <h2>Part 2: Simulation via Numerical Integration</h2>
-        <p> To make our cloth look and behave more realistically, we implemented physical equations of motion onto the cloth from one time step to the next. We did this by calculating forces for each point mass using external and spring accelerations. Then we used Verlet integration to calculate the position the point mass would move to based on its force. Lastly, we made
-            sure that the springs don't get too deformed in the process by fixing springs whose point masses were stretched more than 10% of their rest length.
+        <p> To make our cloth look and behave more realistically, we implemented physical equations of motion onto the cloth from one time step to the next. We did this by calculating forces for each point mass using external and spring accelerations. Then we used Verlet integration to calculate the position the point mass would move to based on its force.
+        </p>
+        <p> Lastly, we made sure that the springs don't get too deformed in the process (i.e. within each time step) by fixing springs whose point masses were stretched more than 10% of their rest length. We maintained the same vector direction between the two point masses and only modified their distance apart from each other (called the "correction" variable). We applied half of the correction value to each point mass, unless one of them is pinned, in which case the correction vlaue was applied entirely onto one point mass. We did nothing if both point masses were pinned.
         </p>
         <p>After implementing everything we explained above, we were able to render a cloth pinned at specifiic positions (at the top of the cloth), and falling realistically (due to gravity and other forces). We can adjust settings such as the spring constant ks, density of the point masses, and damping (simulates friction).
         </p>
@@ -162,7 +162,11 @@
             </figure>
         </div>
         <h2>Part 3: Handling Collisions with Other Objects</h2>
-        <p>To implement collisions of the cloth with other surfaces, we first check if a point mass has intersected with or is within the surface of an object (in our case, it is either a sphere or plane). If the cloth has intersected with (or is within) the surface of the object, we create a correction vector on the point mass’s last position to set (or "bump") the current position right above the surface.
+        <p>
+        To implement collisions of the cloth with other surfaces, we first check if a point mass has intersected with or is within the surface of an object (in our case, it is either a sphere or plane). If the cloth has intersected with (or is within) the surface of the object, we create a correction vector on the point mass’s last position (accounting for friction as we do so) to adjust the current position right above the surface.
+        </p>
+        <p>
+        As a result, if there is a scene in which the cloth falls on an object, the cloth will not pass through the object or behave strangely (such as bouncing off the object). Instead it will lay on the object, and slowly (and naturally) slide off over time.
         </p>
         <p>Here are images of our cloth draped over a sphere with different spring constants, ks = 500, 5000, and 50,000. The smaller the spring constant, the more folds there are on the cloth, and the larger the spring constant, the less folds there are on the cloth.
         </p>
@@ -192,8 +196,10 @@
             </figure>
         </div>
         <h2>Part 4: Handling Self-Collisions</h2>
-        <p>To deal with self-collisions, we partitioned point masses into 3D box volumes, and hashed each point mass's location to uniquely map it to a float that represents its specific 3D box volume. This is called spatial hashing, and it speeds up the behavior of self-collisions in run time. With this implementation, instead of having to check if each point mass collides with every other point mass, we just have to check with the point masses who
-            are also in its 3D hash box. We determine whether 2 point masses have collided if they are closer than a certain distance apart (i.e. if they are within 2 * thickness distance apart). If so, we adjust the colliding point masses  with correction vectors.
+        <p>To deal with self-collisions, we partitioned point masses into 3D box volumes, and hashed each point mass's location to uniquely map it to a float that represents its specific 3D box volume. This is called spatial hashing, and it speeds up the behavior of self-collisions in run time. With this implementation, instead of having to check if each point mass collides with every other point mass, we just have to check with the point masses who are also in its 3D hash box. We determine whether 2 point masses have collided if they are closer than a certain distance apart (i.e. if they are within 2 * thickness distance apart). If so, we adjust the colliding point masses  with correction vectors.
+            </p>
+            <p>
+            As a result, if there is a scene in which the cloth falls and folds on itself, the cloth will not clip through itself or behave strangely (such as continuously bouncing off of itself).
             </p>
         <p>Here are screenshots of a cloth collapsing on itself:</p>
         <div class="img-grid">
@@ -242,11 +248,10 @@
             </figure>
         </div>
         <h2>Part 5: Shaders</h2>
-        <p>In part 5, we wrote shader programs to render realistic surfaces like those we implemented with ray tracing. A Shader program is an isolated program that runs in parallel on GPU that executes sections of the graphics pipeline. It allows for a
-            much faster application of rendering frames for real-time and interactive applications (as opposed to ray tracing). The vertex shader applies transforms to vertices and modifies their geometric properties like position and normal vectors,
-            while the fragment shader take in the geometric attributes (calculated by the vertex shaders) and computes the final color that will be shown on the frame buffer. Note, that the vertex shader’s output is the fragment shader’s input.
+        <p>In order to render realistic surfaces, we wrote local shader programs. A shader program is an isolated program that runs in parallel on GPU that executes sections of the graphics pipeline, taking in an input, and outputing a single 4 dimensional vector.
+            It allows for a much faster application of rendering frames for real-time and interactive applications (as opposed to ray tracing). The vertex shader applies transforms to vertices and modifies their geometric properties like position and normal vectors, while the fragment shader take in the geometric attributes (calculated by the vertex shaders) and computes the final color that will be shown on the frame buffer. Note, that the vertex shader’s output is the fragment shader’s input.
         </p>
-        <p>The Blinn-Phong shading model is a local shading model that is based on perceptual observations and combines the ambient lighting, diffusion lighting, and specular lighting of an object. This shading model is fast, simple, and makes objects look
+        <p> The Blinn-Phong shading model is a local shading model that is based on perceptual observations and combines the ambient lighting, diffusion lighting, and specular lighting of an object. This shading model is fast, simple, and makes objects look
             more realistic. Here are different examples of Blinn-Phong shading:
         </p>
         <div class="img-grid">
@@ -323,7 +328,9 @@
                 <figcaption>Normal: 128, Height: 128</figcaption>
             </figure>
         </div>
-        <p>We also implemented mirror shading:
+        <p>
+        
+        We also implemented environment-mapped reflections, where we sample from an environment map’s incoming light rays - say the environment map is based on a picture of the Golden Gate Bridge - and reflect it off the cloth's and object’s surfaces
         </p>
         <div class="img-grid">
             <figure>
@@ -336,9 +343,9 @@
             </figure>
         </div>
 
-        <h2>Web Page Link</h2>
+        <h2> Webpage Link: </h2>
         <p>
-            https://cal-cs184-student.github.io/sp22-project-webpages-lucylanlou/proj4/index.html
+        https://csal-cs184-student.github.io/sp22-project-webpages-lucylanlou/proj4/index.html
         </p>
     </div>
 </body>
