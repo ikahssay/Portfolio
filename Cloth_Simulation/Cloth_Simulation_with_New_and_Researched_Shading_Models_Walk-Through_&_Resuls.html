@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <style>
-  body {
+    body {
     padding: 100px;
     width: 1000px;
     margin: auto;
@@ -10,12 +10,15 @@
     font-weight: 300;
     font-family: 'Open Sans', sans-serif;
     color: #121212;
-  }
-  h1, h2, h3, h4 {
+    border: 120px solid transparent;
+    border-image: url("images/background.png") 100 round;
+    }
+    h1, h2, h3, h4 {
     font-family: 'Source Sans Pro', sans-serif;
-  }
-</style>
-<title>CS 184 Final Project Report</title>
+    }
+    </style>
+
+<title> Cloth Simulation with New & Researched Shading Models </title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
 </head>
@@ -23,20 +26,17 @@
 
 <body>
 
-<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2022</h1>
-<h1 align="middle">Final Project Report</h1>
-<h2 align="middle">Title: SilkySmooth Simulation</h2>
-
+<h1 align="middle"> Cloth Simulation with New & Researched Shading Models </h1>
 <h2 align="middle">Team Members: Anna Clary, Ava Patel, Lucy Lou, Iman Kahssay</h2>
 
 <h2 align="middle">Abstract</h2>
 
-<p>For our final project, we chose the project idea of “Cloth Rendering”. The main goal of our project is to create a local shading model (which is based on perceptual observation, not physics) that is more fit for cloth materials. We implemented two new shaders to the Project 4 rendering program: cloth and anisotropic shaders. Both shaders work as modified microfacet models with three main components: normal distribution, visibility, and diffusion. We also implemented a sheen color to the specular component of both the cloth and anisotropic lighting model in order to increase the realism and be able to render duochrome fabrics. </p>
+<p> The main goal of our project is to create a local shading model (which is based on perceptual observation, not physics) that is more fit for cloth materials. We implemented two new shaders to the cloth stimulation rendering program: cloth and anisotropic shaders. Both shaders work as modified microfacet models with three main components: normal distribution, visibility, and diffusion. We also implemented a sheen color to the specular component of both the cloth and anisotropic lighting model in order to increase the realism and be able to render duochrome fabrics. </p>
 
 
 <h2 align="middle">Technical Approach</h2>
 
-<p>Due to the intensity and location of the specular component our base Project 4 code rendered very shiny results akin to plastic coated materials. In order to produce fabrics more aligned with the visual lighting found when rendering cloth materials, it was clear that the specular components would have to be adjusted. In Addition we also wanted to render textiles like satin and silk that while very shiny in nature, interact with light differently than what could be produced using project 4 code. To render these types of textiles we landed on using an anisotropic lighting model. </p>
+<p>Due to the intensity and location of the specular component, our original code rendered very shiny results akin to plastic coated materials. In order to produce fabrics more aligned with the visual lighting found when rendering cloth materials, it was clear that the specular components would have to be adjusted. In Addition we also wanted to render textiles like satin and silk that while very shiny in nature, interact with light differently than what could be produced using the original code. To render these types of textiles we landed on using an anisotropic lighting model. </p>
 <p>These two models: cloth and anisotropic were implemented in two separate shader frag files and utilized code from Bump.frag up until the Blinn-Phong Shading model as a starting point. By using the code from Bump the texture of the textiles was able to be rendered more realistically through lighting interactions, allowing us to overlay texture files. </p>
 
 <p>Below are some new parameters shared between the two models:</p>
@@ -120,7 +120,7 @@
 <img src="images/anisoadd.png" align="middle" width="500px"/>
 
 <h3>Problems Encountered:</h3>
-<p>Our major problem was topic selection. It took us about a week and a half to land on what we ended up producing. At the beginning we had a whole other idea but due to incompatibility with starter code we had to start anew. At the beginning of rendering textiles we were hoping to do so using Mitsuba 2 and our own custom files, however issues with configuring the software and figuring out how to integrate our custom files drove us to use project 4 as our base. At the point of our project milestone we had a pretty major bug in our specular component where when rendering there were these bright white flickering dots in the deep shadows of our sphere and cloth. This ended up being due to us multiplying by our nol variable without properly checking its bounds. Most of our debugging came in the form of making sure that new parameters were within the bounds that they were supposed to be and double checking the calculations of our various vectors. </p>
+<p> While implementing the new shaders (based on the information found from our research paper) in the project, we had a pretty major bug in our specular component where when rendering there were these bright white flickering dots in the deep shadows of our sphere and cloth. This ended up being due to us multiplying by our nol variable without properly checking its bounds. Most of our debugging came in the form of making sure that new parameters were within the bounds that they were supposed to be and double checking the calculations of our various vectors. </p>
 
 <h3>Lessons Learned:</h3>
 <p>Completing this project, we learned a lot about the components needed for realistic cloth rendering, and got to play around with a really cool modification of a microfacet model. Unlike what we had done previously our specular component is composed of a distribution and visibility term. The creation of the initial cloth shader was a lesson in understanding how not only the distribution and visibility components affect the specular aspects, but also how roughness the roughness parameter plays a key role.  We were given an introduction to anisotropic lighting in the lecture, but we developed a much deeper understanding of what it was and how it works through this project. We explored different values of anisotropy and learned how it affected the reflection shape. Lastly, we deepened our understanding of density and spring constant values for rendering different types of fabric. We learned that denim should be denser with a high spring constant since it’s a heavier and stiffer material. We also learned that silk should have a lower spring constant since it’s flimsier.</p>
@@ -131,15 +131,15 @@
     <table style="width=100%">
     <tr>
         <td>
-            <img src="images/before_close_up.png" align="middle" width="400px" />
-            <figcaption align="middle">Code from Project 4. Very plastic looking</figcaption>
+            <img src="images/before_close_up.png" align="middle" width="350px" />
+            <figcaption align="middle"> Without the new shaders (i.e. original code). Very plastic looking</figcaption>
         </td>
         <td>
-            <img src="images/wool_knit_closeup.png" align="middle" width="400px" />
+            <img src="images/wool_knit_closeup.png" align="middle" width="350px" />
             <figcaption align="middle">Close up of wool-knit</figcaption>
         </td>
         <td>
-            <img src="images/silk_close_up.png" align="middle" width="400px" />
+            <img src="images/silk_close_up.png" align="middle" width="350px" />
             <figcaption align="middle">Close up of silk cloth</figcaption>
         </td>
     </tr>
@@ -152,21 +152,21 @@
     <table style="width=100%">
     <tr>
         <td>
-            <img src="images/clothd&s.png" align="middle" width="400px" />
+            <img src="images/clothd&s.png" align="middle" width="350px" />
         </td>
         <td>
-            <img src="images/image21.png" align="middle" width="400px" />
+            <img src="images/image21.png" align="middle" width="350px" />
         </td>
         <td>
-            <img src="images/image22.png" align="middle" width="400px" />
+            <img src="images/image22.png" align="middle" width="350px" />
         </td>
     </tr>
     <tr>
         <td>
-            <img src="images/image24.png" align="middle" width="400px" />
+            <img src="images/image24.png" align="middle" width="350px" />
         </td>
         <td>
-            <img src="images/silk_dress.png" align="middle" width="400px" />
+            <img src="images/silk_dress.png" align="middle" width="350px" />
         </td>
     </tr>
     </table>
@@ -178,10 +178,10 @@
 <a href="https://google.github.io/filament/Filament.html#materialsystem/anisotropicmodel ">https://google.github.io/filament/Filament.html#materialsystem/anisotropicmodel</a>
 
 <h2 align="middle">Contributions:</h2>
-  <p><strong>Lucy:</strong> I worked on topic generation and participated in team zoom debug meetings. I made the drafts of the milestone video and presentation slides. I started on the anisotropic lighting code. I set the density and spring constants for denim and silk. I generated images and gifs for the final presentation, and worked on the slides. I worked on the Technical Approach section in the Final Report.</p>
-  <p><strong>Iman:</strong> I worked on topic generation, found the research paper (shown in references), found the textures needed for the cloths, helped find the right parameters needed to render different types of cloth, and also participated in team zoom debug meetings. I facilitated/scheduled meetings for when everyone is free to meet on zoom and work on the final project together. I worked on the milestone writeup and presentation slides. I helped write/debug the code. I worked on the final presentation slides and generated images for it. Lastly, I worked on the “Abstract”, and “Results” portion of the final report (and a bit on the “Technical Approach”).</p>
-  <p><strong>Anna:</strong> I worked on topic generation, implemented the code for both two shaders, helped find the right parameters needed to render different types of cloth, and participated in team zoom debug meetings. I worked on the milestone writeup and presentation slides. I worked on the final presentation slides and generated images for it. Lastly, I worked on the “Technical Approach” section in the final report and helped write the script for the final video.</p>
-  <p><strong>Ava:</strong> I worked on topic generation, participated in zoom discussions, and helped generate some simulations/scenes for demonstration purposes in presentation and videos. I worked on the milestone writeup and presentation slides. I also recorded and edited the milestone video. I helped work on the final presentation slides and recorded and edited the final video.</p>
+  <p><strong>Lucy:</strong> I worked on topic generation and participated in team zoom debug meetings. I made the drafts of the presentation slides. I started on the anisotropic lighting code, and set the density and spring constants for denim and silk. I generated images and gifs for the final presentation, and worked on the slides. I worked on the Technical Approach section in the Final Report.</p>
+  <p><strong>Iman:</strong> I worked on topic generation, found the research paper (shown in references), found the textures needed for the cloths, helped find the right parameters needed to render different types of cloth, and also participated in team zoom debug meetings. I facilitated/scheduled meetings for when everyone is free to meet on zoom and work on the project together. I worked on the milestone writeup, presentation slides, and helped write/debug the code. I worked on the presentation slides and generated images for it. Lastly, I worked on the “Abstract”, and “Results” portion of the this report (and a bit on the “Technical Approach”).</p>
+  <p><strong>Anna:</strong> I worked on topic generation, implemented the code for both two shaders, helped find the right parameters needed to render different types of cloth, and participated in team zoom debug meetings. I worked on the report, presentation slides, and generated images for it. Lastly, I worked on the “Technical Approach” section in the final report and helped write the script for the final video.</p>
+  <p><strong>Ava:</strong> I worked on topic generation, participated in zoom discussions, and helped generate some simulations/scenes for demonstration purposes in presentation and videos. I worked on the presentation slides and recorded and edited the final video.</p>
   
 <h2 align="middle">Video:</h2>
 <a href="https://drive.google.com/file/d/1dP_GyRYvTpzQN4AP2u9G-ZHD2f7rm0mG/view?usp=sharing"> Final Video </a>
