@@ -1,2 +1,3 @@
 # Portfolio
-This repo will have every project I am going to showcase in my portfolio.
+Welcome! This repository showcases all the work/code I have written for each project shown in my resume.
+Enjoy! :)
