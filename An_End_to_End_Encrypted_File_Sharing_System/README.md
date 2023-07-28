@@ -32,4 +32,5 @@ Also note that due to Shannon’s Maxim and Kerckhoffs’ principle, the adversa
 
 <h1><b> Design Model </h1></b>
 
+The explanation of how I designed this file sharing system is available in both <i> html </i> and <i> pdf </i> versions. Please look for the title, "Design Model", and click on either html or pdf versions to learn more.
 
