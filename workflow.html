@@ -1,0 +1,27 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h3>Portfolio Webpages Workflow</h3>
+		<br><br>
+		<a href="/An_End_to_End_Encrypted_File_Sharing_System/Design_Model.html"> An_End_to_End_Encrypted_File_Sharing_System </a>
+		<br><br>
+		<a href="/Cloth_Simulation/Cloth_Simulation_Walk-Through_&_Results.html"> Cloth_Simulation Part 1 </a>
+		<br><br>
+		<a href="/Cloth_Simulation/Cloth_Simulation_with_New_&_Researched_Shading_Models_Walk-Through_&_Resuls.html"> Cloth_Simulation Part 2 </a>
+		<br><br>
+		<a href="/proj3-2/index.html">Project 3-2</a>
+		<br><br>
+		<a href="/proj4/index.html">Project 4</a>
+	</body>
+	<script>
+		var links = document.body.getElementsByTagName("a")
+		var a = window.location.href.indexOf(".io")
+		var repo_name = window.location.href.substring(a+3)
+		for(var i = 0; i < links.length; i++){
+			var link = links[i]
+			var actual_name = link.href.substring(link.href.indexOf(".io")+4)
+			link.href = repo_name + actual_name
+		}
+	</script>
+</html>
