@@ -1,6 +1,6 @@
 # Gitlet Design Document
 
-**Name**: Iman Kahssay
+**By**: Iman Kahssay
 
 ## Classes and Data Structures
 
