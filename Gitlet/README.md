@@ -1,11 +1,10 @@
 # Gitlet Design Document
 
-**Name**: Iman Kahssay
+**By**: Iman Kahssay
 
 ## Classes and Data Structures
 
 ### Class 1: Main
-*@source: Lab 6*
 
 This is the entry point to our program.
 It takes in arguments from the command line and based on the 
@@ -23,7 +22,6 @@ CapersRepository class.
 
 
 ### Class 2: Repository
-*@source: Lab 6*
 
 This is where the main logic of our program will live. This 
 class will handle all of the actual Gitlet commands by 
@@ -75,7 +73,6 @@ need to serialize it and save it to a file.
 
 
 ### Class 3: Commit
-*@source: Lab 6*
 
 This class represents a Commit that will be stored in a file. 
 Because each Commit will have a unique ID, we may simply use 
@@ -129,7 +126,6 @@ This class will save the different *versions* of a single file.
     - Thought about saving it as a String, but the contents may be too large.
 
 ### Class 5: Utils
-*@source: Lab 6*
 
 Utils
 This class contains helpful utility methods to read/write 
