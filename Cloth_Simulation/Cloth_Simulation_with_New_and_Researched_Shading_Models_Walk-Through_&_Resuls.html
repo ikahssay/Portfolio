@@ -29,56 +29,67 @@
 <h1 align="middle"> Cloth Simulation with New & Researched Shading Models </h1>
 <h2 align="middle">Team Members: Anna Clary, Ava Patel, Lucy Lou, Iman Kahssay</h2>
 
+<br></br>
 <h2 align="middle">Abstract</h2>
 
-<p> The main goal of our project is to create a local shading model (which is based on perceptual observation, not physics) that is more fit for cloth materials. We implemented two new shaders to the cloth stimulation rendering program: cloth and anisotropic shaders. Both shaders work as modified microfacet models with three main components: normal distribution, visibility, and diffusion. We also implemented a sheen color to the specular component of both the cloth and anisotropic lighting model in order to increase the realism and be able to render duochrome fabrics. </p>
+<p> The main goal of our project is to create a local shading model (which is based on <i> perceptual </i> observation, not physics) that focuses specifically and is more fit for cloth materials; making them look more realistic (and detailed) to the human eye. We implemented two new shaders to the cloth rendering program: cloth and anisotropic shaders. Both shaders work as modified microfacet models with three main components: normal distribution, visibility, and diffusion. We used the same structure as the Blinn Phong model, but mostly focused on the diffusion lighting and specular lighting of the object. We also implemented a color sheen to the specular component of both the cloth and anisotropic lighting model in order to increase the realism and be able to render duo-chrome fabrics.
+</p>
 
-
+<br></br>
 <h2 align="middle">Technical Approach</h2>
 
-<p>Due to the intensity and location of the specular component, our original code rendered very shiny results akin to plastic coated materials. In order to produce fabrics more aligned with the visual lighting found when rendering cloth materials, it was clear that the specular components would have to be adjusted. In Addition we also wanted to render textiles like satin and silk that while very shiny in nature, interact with light differently than what could be produced using the original code. To render these types of textiles we landed on using an anisotropic lighting model. </p>
-<p>These two models: cloth and anisotropic were implemented in two separate shader frag files and utilized code from Bump.frag up until the Blinn-Phong Shading model as a starting point. By using the code from Bump the texture of the textiles was able to be rendered more realistically through lighting interactions, allowing us to overlay texture files. </p>
+<p>Due to the intensity and location of the specular component, our original code rendered very shiny results akin to plastic-coated materials. In order to produce fabrics more aligned with the visual lighting found when rendering cloth materials, it was clear that the specular components would have to be adjusted. In addition, we also wanted to render textiles like satin and silk that while very shiny in nature, interact with light differently than what could be produced using the original code. To render these types of textiles we landed on using an anisotropic lighting model. </p>
+<p>These two models: cloth and anisotropic were implemented in two separate shader frag files and utilized code from "Bump.frag" up until the Blinn-Phong Shading model as a starting point. By using the code from the "Bump.frag" file, the texture of the textiles was able to be rendered more realistically through lighting interactions, allowing us to overlay texture files. </p>
 
 <p>Below are some new parameters shared between the two models:</p>
 <dl>
-    <dt><strong>Roughness</strong></dt>
-    <dd>- The user input roughness should be a value between 0 and 1.0 and is squared to create the parameter 𝜶 (alpha) seen in the equations in the following sections</dd>
-    <dd>The larger the roughness parameter the more the specular component is diffused out as seen below with the blue spheres. This is due to the parameter’s role in varying the microfacet normals, the larger the value the more the normals are varied creating a rougher looking surface</dd>
-    <dt><strong>Sheen Color</strong></dt>
-    <dd>- In order to be able to render duochromatic textiles as well as just produce more realistic results we implemented a sheen color which is essentially the color of the specular components</dd>
-    <dd>- Within our code the sheen color is implemented as a vec3 RGB value, which can be set manually, or to the user imputed color depending on the users’ preference</dd>
-    <dd>- A few of our often used settings include: setting the sheen color to the luminance of the diffuse color (which is determined via user input), the square root of the diffuse color, the user input color with the diffuse color set manually, or simply 0.4 for all values</dd>
-    <dt><strong>Diffuse Color</strong></dt>
+    <dt><strong><u>Roughness:</u></strong></dt>
+    <dd>- The user input roughness should be a value between 0 and 1.0 and is squared to create the parameter 𝜶 (alpha) seen in the equations in the following sections.</dd>
+    <dd>- The larger the roughness parameter the more the specular component is diffused out as seen below with the blue spheres. This is due to the parameter’s role in varying the microfacet normals, the larger the value the more the normals are varied creating a rougher-looking surface.</dd>
+    
+    <dt><strong><u>Sheen Color:</u></strong></dt>
+    <dd>- In order to be able to render duochromatic textiles as well as just produce more realistic results we implemented a sheen color which is essentially the color of the specular components.</dd>
+    <dd>- Within our code, the sheen color is implemented as a vec3 RGB value, which can be set manually, or to the user inputted color depending on the user's preference.</dd>
+    <dd>- A few of our often used settings include: setting the sheen color to the luminance of the diffuse color (which is determined via user input), the square root of the diffuse color, the user input color with the diffuse color set manually, or simply 0.4 for all values.</dd>
+    
+    <dt><strong><u>Diffuse Color:</u></strong></dt>
     <dd>- Our diffuse color is simply the base color of our fabric</dd>
     <dd>- Later on in the anisotropic model section there is a figure showing the diffuse, and specular components where it is clear how playing around with the base and sheen color can create a really beautifully colored fabric</dd>
 </dl>
 
+<br></br>
 <h3>Sphere’s Rendered Using our Anisotropic Model Varying Only Roughness as a Parameter:</h3>
-
 <img src="images/roughnessscale.png" align="middle" width="500px"/>
 
-<h3>Cloth Model:</h3>
-<p>Distribution/Visibility</p>
+<br></br>
+<h2><u>Cloth Model:</u></h2>
+<p><u>Distribution/Visibility:</u></p>
 <img src="images/specomp.png" align="middle" width="300px"/>
-<p>Above is the specular component of our model. The numerator is our distribution while the denominator is our visibility term. Both of these equations are taken from our documentation. In implementing our specular component there was a choice between two possible distributions: the one we ended up using, “charlie”, and “ashikhmin’s velvet” (which you can see below). Ultimately we went with using the charlie as it was significantly easier to code which saves time for us and also ultimately requires less computation which is important when considering that these lighting models are implemented in shader files. Keeping computation as simple as possible will help to make sure performance issues do not occur. </p>
-<p>Diffuse</p>
+<p>Above is the specular component of our model. The numerator is our distribution while the denominator is our visibility term. Both of these equations are taken from our documentation. In implementing our specular component there was a choice between two possible distributions: the one we ended up using, “Charlie”, and “Ashikhmin’s velvet” (which you can see below). Ultimately we went with using the "Charlie" as it was significantly easier to code which saves time for us and also ultimately requires less computation which is important when considering that these lighting models are implemented in shader files. Keeping computation as simple as possible will help to make sure performance issues do not occur. </p>
+
+<p><u>Diffusion:</u></p>
 <img src="images/discomp.png" align="middle" width="200px"/>
-<p>Our diffuse component was super simple. The only calculations we chose to do was to divide our diffuseColor parameter by pi. Similarly to our justification for choosing the “charlie” distribution over the “ashikhmin’s velvet” we ultimately chose not to include the Fresnel term component in order to reduce performance issues and keep things simple. In addition when the fresnel term was implemented we did not see any discernible difference and therefore chose to leave it out, an action which the documentation we were using wrote as a good option.  </p>
-<h3>Anisotropic Model:</h3>
+<p> Our diffuse component was super simple. The only calculation we chose to do was to divide our 
+    <span class="code"> diffuseColor </span> parameter by <span class="code"> pi </span>. 
+    Similarly to our justification for choosing the “Charlie” distribution over the “Ashikhmin’s velvet”, we ultimately chose not to include the Fresnel term component in order to reduce performance issues and keep things simple. In addition, when the Fresnel term was implemented we did not see any discernible difference and therefore chose to leave it out, an action which the documentation we were using wrote as a good option.  </p>
+
+<br></br>
+<h2><u>Anisotropic Model:</u></h2>
 <p>The anisotropic model introduces one more parameter than the cloth model.</p>
 <dl>
-    <dt><strong>Anisotropy</strong></dt>
-    <dd>- This is a manual user inputed float between -1.0 and 1.0</dd>
-    <dd>- negative values produce specular components that are vertical aka bi-tangental to the surface normals, these types of values were not used in any of our renderings as the result of the vertical specular components did not create a realistic looking model for our purposes</dd>
-    <dd>- As you can see below, increasing the anisotropic variable results in more defined ring-like highlights</dd>
+    <dt><strong><u>Anisotropy:</u></strong></dt>
+    <dd>- This is a manual user inputted float between -1.0 and 1.0.</dd>
+    <dd>- Negative values produce specular components that are vertical aka bi-tangental to the surface normals, these types of values were not used in any of our renderings as the result of the vertical specular components did not create a realistic-looking model for our purposes.</dd>
+    <dd>- As you can see below, increasing the anisotropic variable results in more defined ring-like highlights.</dd>
 </dl>
 
+<br></br>
 <h3>Sphere’s Rendered Using our Anisotropic Model Varying Only Anisotropy as a Parameter:</h3>
 
 <img src="images/anisotropyscale.png" align="middle" width="500px"/>
 
-
-<p>Distribution</p>
+<br></br>
+<p><b><u>Distribution</u></b></p>
 <div align="middle">
     <table style="width=100%">
     <tr>
@@ -94,11 +105,12 @@
     </table>
 </div>
 
-<p>This was our chosen distribution function, with h being the half angel and 𝜶 being our roughness parameter as defined before our cloth shader explanation. One of the key new factors in this distribution are the alpha-t and alpha-b variables. We calculated these variables according to the equations below:</p>
+<p>This was our chosen distribution function, with h being the half angel and 𝜶 being our roughness parameter as defined before our cloth shader explanation. One of the key new factors in this distribution is the alpha-t and alpha-b variables. We calculated these variables according to the equations above.</p>
 
-<p>In our documentation there were a few options in terms of how one could calculate the alpha-t and alpha-b values. Ultimately we chose this implementation for two key reasons: simplicity and results. Using the above definitions we were able to render very nice distinct anisotropic specular components without having to complete a plethora of operations. As our code is being done in a shader file it is vital to make sure it is as simplistic as possible in order to prevent performance issues.</p>
+<p>In our documentation, there were a few options in terms of how one could calculate the alpha-t and alpha-b values. Ultimately we chose this implementation for two key reasons: simplicity and results. Using the above definitions, we were able to render very nice and distinct anisotropic specular components without having to complete a plethora of operations. As our code is being done in a shader file, it is vital to make sure it is as simplistic as possible in order to prevent performance issues.</p>
 
-<p>Visibility</p>
+<br></br>
+<p><b><u>Visibility</u></b></p>
 <div align="middle">
     <table style="width=100%">
     <tr>
@@ -116,15 +128,18 @@
 
 <p>This is our visibility parameter as outlined in our documentation. With the lambda-v and lambda-t defined above.</p>
 
-<p>The visibility, distribution and sheen color are multiplied together to create our specular component and then added to our diffuse, which utilizes the same code as our diffuse component in the cloth shader. Below is a visual of our diffuse + specular component that produces our final result. As you can see the sheen color plays a really interesting role in rendering the realistic looking fuschia silk.</p>
+<p> The visibility, distribution, and sheen color are multiplied together to create our specular component and then added to our diffuse component, which utilizes the same code as our diffuse component in the cloth shader. Below is a visual of our diffuse + specular component that produces our final result. As you can see, the sheen color plays a really interesting role in rendering the realistic-looking fuschia silk. </p>
 <img src="images/anisoadd.png" align="middle" width="500px"/>
 
-<h3>Problems Encountered:</h3>
-<p> While implementing the new shaders (based on the information found from our research paper) in the project, we had a pretty major bug in our specular component where when rendering there were these bright white flickering dots in the deep shadows of our sphere and cloth. This ended up being due to us multiplying by our nol variable without properly checking its bounds. Most of our debugging came in the form of making sure that new parameters were within the bounds that they were supposed to be and double checking the calculations of our various vectors. </p>
+<br></br>
+<h2><u> Problems Encountered: </u></h2>
+<p> While implementing the new shaders (based on the information found from our research paper) in the project, we had a pretty major bug in our specular component where when rendering, there were these bright white flickering dots in the deep shadows of our sphere and cloth. We later found that this bug was due to us multiplying by our nol variable without properly checking its bounds. Most of our debugging came in the form of making sure that new parameters were within the bounds that they were supposed to be, and double-checking the calculations of our various vectors. </p>
 
-<h3>Lessons Learned:</h3>
+<br></br>
+<h2><u> Lessons Learned: </u></h2>
 <p>Completing this project, we learned a lot about the components needed for realistic cloth rendering, and got to play around with a really cool modification of a microfacet model. Unlike what we had done previously our specular component is composed of a distribution and visibility term. The creation of the initial cloth shader was a lesson in understanding how not only the distribution and visibility components affect the specular aspects, but also how roughness the roughness parameter plays a key role.  We were given an introduction to anisotropic lighting in the lecture, but we developed a much deeper understanding of what it was and how it works through this project. We explored different values of anisotropy and learned how it affected the reflection shape. Lastly, we deepened our understanding of density and spring constant values for rendering different types of fabric. We learned that denim should be denser with a high spring constant since it’s a heavier and stiffer material. We also learned that silk should have a lower spring constant since it’s flimsier.</p>
 
+<br></br>
 <h2 align="middle">Results</h2>
 
 <div align="middle">
@@ -136,7 +151,7 @@
         </td>
         <td>
             <img src="images/wool_knit_closeup.png" align="middle" width="350px" />
-            <figcaption align="middle">Close up of wool-knit</figcaption>
+            <figcaption align="middle">Close up of wool-knit cloth</figcaption>
         </td>
         <td>
             <img src="images/silk_close_up.png" align="middle" width="350px" />
@@ -146,6 +161,7 @@
     </table>
 </div>
 
+<br></br>
 <h2 align="middle">Gallery</h2>
 
 <div align="middle">
@@ -172,18 +188,21 @@
     </table>
 </div>
 
+<br></br>
 <h2 align="middle">References</h2>
 
 <a href="https://google.github.io/filament/Filament.html#materialsystem/clothmodel ">https://google.github.io/filament/Filament.html#materialsystem/clothmodel</a>
 <a href="https://google.github.io/filament/Filament.html#materialsystem/anisotropicmodel ">https://google.github.io/filament/Filament.html#materialsystem/anisotropicmodel</a>
 
+<br></br>
 <h2 align="middle">Contributions:</h2>
   <p><strong>Lucy:</strong> I worked on topic generation and participated in team zoom debug meetings. I made the drafts of the presentation slides. I started on the anisotropic lighting code, and set the density and spring constants for denim and silk. I generated images and gifs for the final presentation, and worked on the slides. I worked on the Technical Approach section in the Final Report.</p>
-  <p><strong>Iman:</strong> I worked on topic generation, found the research paper (shown in references), found the textures needed for the cloths, helped find the right parameters needed to render different types of cloth, and also participated in team zoom debug meetings. I facilitated/scheduled meetings for when everyone is free to meet on zoom and work on the project together. I worked on the milestone writeup, presentation slides, and helped write/debug the code. I worked on the presentation slides and generated images for it. Lastly, I worked on the “Abstract”, and “Results” portion of the this report (and a bit on the “Technical Approach”).</p>
-  <p><strong>Anna:</strong> I worked on topic generation, implemented the code for both two shaders, helped find the right parameters needed to render different types of cloth, and participated in team zoom debug meetings. I worked on the report, presentation slides, and generated images for it. Lastly, I worked on the “Technical Approach” section in the final report and helped write the script for the final video.</p>
-  <p><strong>Ava:</strong> I worked on topic generation, participated in zoom discussions, and helped generate some simulations/scenes for demonstration purposes in presentation and videos. I worked on the presentation slides and recorded and edited the final video.</p>
+  <p><strong>Iman:</strong> I worked on topic generation, found the research paper (shown in references), found the textures needed for the cloths, helped find the right parameters needed to render different types of cloth, and also participated in team Zoom debug meetings. I facilitated/scheduled meetings for when everyone is free to meet on Zoom and work on the project together. I worked on the milestone writeup, presentation slides, and helped write/debug the code. I worked on the presentation slides and generated images for them. Lastly, I worked on the “Abstract”, and “Results” portions of this report (and a bit on the “Technical Approach”).</p>
+  <p><strong>Anna:</strong> I worked on topic generation, implemented the code for both two shaders, helped find the right parameters needed to render different types of cloth, and participated in team Zoom debug meetings. I worked on the report, presentation slides, and generated images for it. Lastly, I worked on the “Technical Approach” section in the final report and helped write the script for the final video.</p>
+  <p><strong>Ava:</strong> I worked on topic generation, participated in Zoom discussions, and helped generate some simulations/scenes for demonstration purposes in presentation and videos. I worked on the presentation slides and recorded and edited the final video.</p>
   
-<h2 align="middle">Video:</h2>
+<br></br>
+<h2 align="middle">Video</h2>
 <a href="https://drive.google.com/file/d/1dP_GyRYvTpzQN4AP2u9G-ZHD2f7rm0mG/view?usp=sharing"> Final Video </a>
 
 </body>
