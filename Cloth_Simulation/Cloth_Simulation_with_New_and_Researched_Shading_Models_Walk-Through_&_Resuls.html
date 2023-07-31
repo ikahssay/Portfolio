@@ -27,7 +27,8 @@
 <body>
 
 <h1 align="middle"> Cloth Simulation with New & Researched Shading Models </h1>
-<h2 align="middle">Team Members: Anna Clary, Ava Patel, Lucy Lou, Iman Kahssay</h2>
+<h2 align="middle">A SilkySmooth Simulation</h2>
+<h3 align="middle">Team Members: Anna Clary, Ava Patel, Iman Kahssay, and Lucy Lou</h3>
 
 <br></br>
 <h2 align="middle">Abstract</h2>
@@ -63,11 +64,30 @@
 
 <br></br>
 <h2><u>Cloth Model:</u></h2>
-<p><u>Distribution/Visibility:</u></p>
-<img src="images/specomp.png" align="middle" width="300px"/>
-<p>Above is the specular component of our model. The numerator is our distribution while the denominator is our visibility term. Both of these equations are taken from our documentation. In implementing our specular component there was a choice between two possible distributions: the one we ended up using, “Charlie”, and “Ashikhmin’s velvet” (which you can see below). Ultimately we went with using the "Charlie" as it was significantly easier to code which saves time for us and also ultimately requires less computation which is important when considering that these lighting models are implemented in shader files. Keeping computation as simple as possible will help to make sure performance issues do not occur. </p>
+<p> Here is our main code that implements our cloth shader. We have added this to our project’s “Custom.frag” file. There are three main parts: normal distribution & visibility (which is part of the specular component) and the diffusion function (for the diffusion component). This is implemented in replacement of the Blinn-Phong model. </p>
+<img src="images/Main Code for New Cloth Shader.png" align="middle" width="640px"/>
 
-<p><u>Diffusion:</u></p>
+<br></br>
+<p><u>Specular Component:</u></p>
+<img src="images/Code for Specular Component of Cloth Shader.png" align="middle" width="600px"/>
+
+<table style="width=100%">
+<tr>
+    <td>
+        <img src="images/Code for Visibility Helper Func for Cloth Shader.png" align="left" width="370px" />
+    </td>
+    <td>
+        <img src="images/Code for Distribution Helper Func for Cloth Shader.png" align="left" width="650px" />
+    </td>
+</tr>
+</table>
+
+
+<p> Above is the specular component of our model. The numerator is our distribution while the denominator is our visibility term. Both of these equations are taken from our documentation. In implementing our specular component there was a choice between two possible distributions: “Charlie” and “Ashikhmin’s velvet” (shown in the image above). Ultimately we went with using the “Charlie” as it was significantly easier to code which saves time for us and also ultimately requires less computation which is important when considering that these lighting models are implemented in shader files. Keeping computation as simple as possible will help to make sure performance issues do not occur.
+</p>
+
+<br></br>
+<p><u>Diffusion Component:</u></p>
 <img src="images/discomp.png" align="middle" width="200px"/>
 <p> Our diffuse component was super simple. The only calculation we chose to do was to divide our 
     <span class="code"> diffuseColor </span> parameter by <span class="code"> pi </span>. 
@@ -75,10 +95,15 @@
 
 <br></br>
 <h2><u>Anisotropic Model:</u></h2>
-<p>The anisotropic model introduces one more parameter than the cloth model.</p>
+<p>Here is our main code that implements our anisotropic shader. We have added this to our project’s “.frag” file. The anisotropic model’s structure is very similar to the new cloth models, where it also has three main parts:  normal distribution & visibility (which is part of the specular component) and the diffusion function (for the diffusion component). It does, however, introduce one more parameter than the cloth model.</p>
+
+<img src="images/Main Code for New Anisotropic Shader Part 2.png" align="middle" width="825px"/>
+<img src="images/Main Code for New Anisotropic Shader.png" align="middle" width="700px"/>
+
+<br></br>
 <dl>
     <dt><strong><u>Anisotropy:</u></strong></dt>
-    <dd>- This is a manual user inputted float between -1.0 and 1.0.</dd>
+    <dd>- This is a manual, user inputted float between -1.0 and 1.0.</dd>
     <dd>- Negative values produce specular components that are vertical aka bi-tangental to the surface normals, these types of values were not used in any of our renderings as the result of the vertical specular components did not create a realistic-looking model for our purposes.</dd>
     <dd>- As you can see below, increasing the anisotropic variable results in more defined ring-like highlights.</dd>
 </dl>
@@ -89,20 +114,23 @@
 <img src="images/anisotropyscale.png" align="middle" width="500px"/>
 
 <br></br>
+<h3><u>Specular Component:</u></h3>
 <p><b><u>Distribution</u></b></p>
 <div align="middle">
     <table style="width=100%">
     <tr>
         <td>
-            <img src="images/distributioneq.png" align="middle" width="300px" />
+            <img src="images/distributioneq.png" align="left" width="400px" />
             <figcaption align="middle"></figcaption>
         </td>
         <td>
-            <img src="images/anisotropyeq.png" align="middle" width="200px" />
+            <img src="images/anisotropyeq.png" align="left" width="250px" />
             <figcaption align="middle"></figcaption>
         </td>
     </tr>
     </table>
+
+    <img src="images/Code for Distribution Func for Anisotropic Shader.png" align="middle" width="640px"/>
 </div>
 
 <p>This was our chosen distribution function, with h being the half angel and 𝜶 being our roughness parameter as defined before our cloth shader explanation. One of the key new factors in this distribution is the alpha-t and alpha-b variables. We calculated these variables according to the equations above.</p>
@@ -115,15 +143,17 @@
     <table style="width=100%">
     <tr>
         <td>
-            <img src="images/visibilityeq.png" align="middle" width="300px" />
+            <img src="images/visibilityeq.png" align="left" width="350px" />
             <figcaption align="middle"></figcaption>
         </td>
         <td>
-            <img src="images/visibilityeq2.png" align="middle" width="200px" />
+            <img src="images/visibilityeq2.png" align="left" width="250px" />
             <figcaption align="middle"></figcaption>
         </td>
     </tr>
     </table>
+
+    <img src="images/Code for Visibility Func for Anisotropic Shader.png" align="middle" width="640px"/>
 </div>
 
 <p>This is our visibility parameter as outlined in our documentation. With the lambda-v and lambda-t defined above.</p>
@@ -138,6 +168,21 @@
 <br></br>
 <h2><u> Lessons Learned: </u></h2>
 <p>Completing this project, we learned a lot about the components needed for realistic cloth rendering, and got to play around with a really cool modification of a microfacet model. Unlike what we had done previously our specular component is composed of a distribution and visibility term. The creation of the initial cloth shader was a lesson in understanding how not only the distribution and visibility components affect the specular aspects, but also how roughness the roughness parameter plays a key role.  We were given an introduction to anisotropic lighting in the lecture, but we developed a much deeper understanding of what it was and how it works through this project. We explored different values of anisotropy and learned how it affected the reflection shape. Lastly, we deepened our understanding of density and spring constant values for rendering different types of fabric. We learned that denim should be denser with a high spring constant since it’s a heavier and stiffer material. We also learned that silk should have a lower spring constant since it’s flimsier.</p>
+
+<div class="img-grid" align = "left">
+    <figure>
+        <img src="images/gifs/denim.gif" alt="Denim Gifs" width="400px" >
+        <img src="images/gifs/denim_pic.png" alt="Denim Part 1" width="400px" >
+        <figcaption align="left">
+            We adjusted the density to be higher since denim is thick and heavy (density = 800 g/cm^2), and the spring constant, ks, is also increased since it’s a stiff fabric (ks = 1e +7 N/m).)</figcaption>
+    </figure>
+    <div></div>
+    <figure>
+        <img src="images/gifs/silk.gif" alt="Silk Gifs" align="middle" width="400px" >
+        <figcaption align="left"> We adjusted the density to be higher than the default value since silk is heavy (density = 300 g/cm^2), and the spring constant, ks, is decreased since it’s a flimsy fabric (ks = 5,000 N/m). 
+        </figcaption>
+    </figure>
+</div>
 
 <br></br>
 <h2 align="middle">Results</h2>
@@ -201,9 +246,5 @@
   <p><strong>Anna:</strong> I worked on topic generation, implemented the code for both two shaders, helped find the right parameters needed to render different types of cloth, and participated in team Zoom debug meetings. I worked on the report, presentation slides, and generated images for it. Lastly, I worked on the “Technical Approach” section in the final report and helped write the script for the final video.</p>
   <p><strong>Ava:</strong> I worked on topic generation, participated in Zoom discussions, and helped generate some simulations/scenes for demonstration purposes in presentation and videos. I worked on the presentation slides and recorded and edited the final video.</p>
   
-<br></br>
-<h2 align="middle">Video</h2>
-<a href="https://drive.google.com/file/d/1dP_GyRYvTpzQN4AP2u9G-ZHD2f7rm0mG/view?usp=sharing"> Final Video </a>
-
 </body>
 </html>
