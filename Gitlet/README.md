@@ -2,11 +2,14 @@
 
 **By**: Iman Kahssay
 
+## Overview
+Using IntelliJ (and writing in Java), I implemented a version-control system (which is essentially a backup system for related collections of files) that mimics some of the basic features of the popular system called Git. The main functionality that this project, Gitlet, supports are: saving contents of entire directories of files (i.e. <b><i>committing</i></b> files in Git), stopping files from being committed and removing those files from the working directory (i.e. <b><i>rm</i></b> or <b><i>removing</i></b> in Git), restoring a version of one or more files or entire commits (i.e. <b><i>checking out</i></b> files in Git), viewing the history of the user’s backups (i.e. <b><i>logging</i></b> in Git), maintaining related sequences of commits (called <i>committing branches</i> in Git), and merging changes made from one branch into another (i.e. <b><i>merging</i></b> in Git).
+
 ## Classes and Data Structures
 
 ### Class 1: Main
 
-This is the entry point to our program.
+This is the entry point to the program.
 It takes in arguments from the command line and based on the 
 command (the first element of the args array) calls the 
 corresponding command in Repository which will 
@@ -18,35 +21,34 @@ ensure that enough arguments were passed in.
 
 This class has no fields and hence no associated state: it 
 simply validates arguments and defers the execution to the 
-CapersRepository class.
+Repository class.
 
 
 ### Class 2: Repository
 
-This is where the main logic of our program will live. This 
+This is where the main logic of the program will live. This 
 class will handle all of the actual Gitlet commands by 
 reading/writing from/to the correct file, setting up 
 persistence, and additional error checking.
 
 It will also be responsible for setting up all persistence 
-within gitlet. This includes creating the .gitlet folder as 
-well as the folder and file where we store all Commit objects 
-and the Blobs.
+within Gitlet. This includes creating the .gitlet folder as 
+well as the folder and file where all the Commit objects and Blobs are stored.
 
 This class defers all Commit specific logic to the Commit class: 
 for example, instead of having the Repository class handle 
-Commit serialization and deserialization, we have the Commit 
-class contain the logic for that.
+Commit serialization and deserialization, the Commit 
+class will contain the logic for that.
 
 
-#### Fields
+#### Important Fields
 
 1. Field 1: **static final File CWD = new File(System.getProperty("user.dir"))**
    
     The Current Working Directory. Since it has the 
     package-private access modifier (i.e. no access modifier), 
     other classes in the package may use this field. 
-    It is useful for the other File objects we need to use.
+    This is useful for the other File objects used in this project.
 
 2. Field 2: **static final File GITLET_REPOSITORY_FOLDER = Utils.join(CWD, ".gitlet")** 
    
@@ -66,17 +68,17 @@ class contain the logic for that.
    that commit (i.e. commitID) (therefore, saving the branch/tree 
    of the repository).
 
-These fields are both static since we don’t actually instantiate 
-a Repository object: we simply use it to house functions. If 
-we had additional non-static state (like the Dog class), we’d 
-need to serialize it and save it to a file.
+These fields are both static since the Repository class does not actually instantiate a Repository object: it is simply used to house functions. 
+If there were additional non-static states (like the Dog class), it would need to be serialized and saved in to a file.
+
 
 
 ### Class 3: Commit
 
 This class represents a Commit that will be stored in a file. 
-Because each Commit will have a unique ID, we may simply use 
-that as the name of the file that the object is serialized to.
+Because each Commit will have a unique ID, that unique ID can 
+simply be used as the name of the file that the object is serialized to.
+
 
 All Commit objects are serialized within the COMMITS_FOLDER which 
 is within the GITLET_REPOSITORY_FOLDER. The Commit class has 
@@ -84,7 +86,7 @@ helpful methods that will return the Commit object corresponding
 to some String ID given to it, as well as write that Commit to 
 a file to persist its changes.
 
-#### Fields
+#### Important Fields
 
 1. Field 1: **static final File COMMITS_FOLDER = Utils.join(Repository.GITLET_REPOSITORY_FOLDER, ".commits")** 
    
@@ -105,11 +107,11 @@ a file to persist its changes.
 ### Class 4: Blob
 
 This class represents a Blob that will be stored in a file.
-Because each blob will have a unique ID, we may simply use that
+Because each Blob will have a unique ID, that unique ID may simply be used 
 as the name of the file that the object is serialized to.
 This class will save the different *versions* of a single file.
 
-#### Fields
+#### Important Fields
 
 1. Field 1 : **static final File BLOBS_FOLDER = Utils.join(Repository.GITLET_REPOSITORY, ".blobs")**
    
@@ -127,42 +129,25 @@ This class will save the different *versions* of a single file.
 
 ### Class 5: Utils
 
-Utils
 This class contains helpful utility methods to read/write 
 objects or String contents from/to files, as well as reporting 
 errors when they occur.
 
-This is a staff-provided and PNH written class, so we leave 
-the actual implementation as magic and simply read the helpful 
-javadoc comments above each method to give us an idea of 
-whether or not it’ll be useful for us.
-
 ### Class 6: Staging Area
 
-This class represents the Stating Area that stores files before
-they are committed (in add and remove commands).
+This class represents the Staging Area that stores files before
+they are committed (in *add* and *remove* commands).
 
-#### Fields
-
-1. Field 1 :
-
-### Class 7: Staging Area
-
-This class represents the Stating Area that stores files before
-they are committed (in add and remove commands).
-
-#### Fields
+#### Important Fields
 
 1. Field 1 :
+
 
 ### Class 8: Gitlet Exception
 
 This class represents all of the exceptions and/or error 
 messages that may be thrown.
 
-#### Fields
-
-1. Field 1 :
 
 ## Algorithms
 
