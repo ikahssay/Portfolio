@@ -170,6 +170,6 @@ The directory structure looks like this:
             ├── ...
             ├── blob_n_ID
             └── fileContents for Blob_n_ID 
-        └── HEAD.txt                              <==== Persistent Head Pointer saved in a text file (like story.txt in lab 6).
+        └── HEAD.txt                              <==== Persistent Head Pointer saved in a text file.
        
 
