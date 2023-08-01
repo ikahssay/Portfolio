@@ -12,7 +12,7 @@ public class Blob implements Serializable {
 
     /** The SHA1 value of this Blob (it's ID).
      * Will also need to put a "B" in front of the ID to distinguish Blobs from Commits
-     * OR SINCE THEY'RE IN DIFF FOLDERS, I CAN LOOK FOR HASHES IN JUST THE BLOB FOLDER RIGHT??*/
+     * OR SINCE THEY'RE IN DIFF FOLDERS, I CAN LOOK FOR HASHES IN JUST THE BLOB FOLDER.*/
     private String blobID;
 
     /** Name of the file Blob will be saving the contents of.*/

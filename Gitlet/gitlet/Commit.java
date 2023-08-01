@@ -44,7 +44,7 @@ public class Commit implements Serializable {
 
     /** The SHA1 value of this Commit (it's ID).
      * Will also need to put a "C" in front of the ID to distinguish Commits from Blobs
-     * OR SINCE THEY'RE IN DIFF FOLDERS, I CAN LOOK FOR HASHES IN JUST THE COMMIT FOLDER RIGHT??*/
+     * OR SINCE THEY'RE IN DIFF FOLDERS, I CAN LOOK FOR HASHES IN JUST THE COMMIT FOLDER.*/
     private String commitID;
 
     /** Hashtable of Blob references (the The SHA1 value of Blobs (it's ID).)
