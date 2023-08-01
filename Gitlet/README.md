@@ -26,7 +26,7 @@ Reading and writing the internal objects from and to files is actually pretty ea
 
 As you can see below, each commit (rectangle) points to some blobs (circles), which contain file contents. The commits contain the file names and references to these blobs, as well as a parent link. These references, depicted as arrows, are represented in the .gitlet directory using their SHA-1 hash values (the small hexadecimal numerals above the commits and below the blobs). The newer commit contains an updated version of wug1.txt, but shares the same version of wug2.txt as the older commit. The Commit class will store all of the information that this diagram shows.
 
-<img src="images/commits and blobs diagram.png" align="middle" width="600px" >
+<img src="images/commits and blobs diagram.png" align="middle" width="5500px" >
 
 
 ## Classes and Data Structures
@@ -164,7 +164,21 @@ they are committed (in *add* and *remove* commands).
 
 #### Important Fields
 
-1. Field 1 :
+1. Field 1 : **static final File STAGING_AREA_FOLDER = Utils.join(Repository.GITLET_REPOSITORY**
+   
+    The File object that corresponds to the directory 
+    containing all the serialized Staging Area objects.
+    This is static since all Staging Area objects are stored within 
+    the same directory.
+   
+2. Field 2: **Hashtable<String, String> blobsForAdd** -> Hashtable of Blob references (the The SHA1 value of Blobs (it's ID)) that are staged for addition. This is static since all Blob objects are stored within the same directory.
+        -Key = fileName
+        -Value = Blob's SHA-1 Hash value (Blob's ID)
+
+3. Field 3: ** Hashtable<String, String> blobsForRemove;**  - > Hashtable of Blob references (the The SHA1 value of Blobs (it's ID)) that are staged for removal.
+    This is static since all Blob objects are stored within the same directory.
+        -Key = fileName
+        -Value = Blob's SHA-1 Hash value (Blob's ID)
 
 
 ### Class 8: Gitlet Exception
@@ -172,8 +186,6 @@ they are committed (in *add* and *remove* commands).
 This class represents all of the exceptions and/or error 
 messages that may be thrown.
 
-
-## Algorithms
 
 ## Persistence
 
@@ -198,4 +210,12 @@ The directory structure looks like this:
             ├── state.txt                         <==== The current state of a commit is saved in a text file
         └── HEAD.txt                              <==== Persistent Head Pointer saved in a text file.
        
+## Main Design
+<img src="images/commits and blobs diagram.png" align="middle" width="5500px" >
 
+Each Commit object in the class will have:
+    - A commit ID (i.e. the SHA-1 value) will act as the Commit object's reference/pointer (seen at the top of the "commit box" in the above Figure).
+    - Metada that will have the log message and timestamp of when the commit was made (seen as the first row of the "commit box" in the above Figure).
+    - HashMap of Blob objects that will have the file names saved as the key and Blob object's reference/pointer (also the blob ID/SHA-1 value) saved as the value of the hashmap (seen as the last row of the "commit box" in the above Figure).
+    
+Each Blob object in the class will have:
