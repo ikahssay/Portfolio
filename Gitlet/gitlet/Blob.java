@@ -28,7 +28,7 @@ public class Blob implements Serializable {
         byte[] serializedBlob = Utils.serialize(this);
         blobID = Utils.sha1(serializedBlob);
         fileName = file;
-        fileContentsName = "fileContents for Blob " + this.blobID;
+        fileContentsName = "fileContents for Blob: " + this.blobID;
         fileContents = Utils.join(BLOBS_FOLDER, fileContentsName);
         createBlob(file);
     }
