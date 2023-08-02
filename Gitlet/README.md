@@ -213,6 +213,8 @@ The directory structure looks like this:
 ## Main Design
 <img src="images/commits and blobs diagram.png" align="middle" width="550px" >
 
+The figure above illustrates the way I designed the framework for commits, files (or Blobs), and its metadata.
+
 Each Commit object in the class will have:
 
 - A commit ID (i.e. the SHA-1 value) will act as the Commit object's reference/pointer (seen at the top of the "commit box" in the above Figure).
