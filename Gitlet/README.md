@@ -227,5 +227,3 @@ Each Blob object in the class will have:
 - A blob ID (i.e. the SHA-1 value) will act as the Blob object's reference/pointer (seen at the bottom of the "blob circle" in the above Figure).
 - Internal data -> file Name, the version it's in, and contents that will be saved in the blob (seen within the "blob circle" in the above Figure").
 
-## Implementation
-To learn more about the implementation of this project, please visit the "<b>INSERT HERE</b>" pdf file.
