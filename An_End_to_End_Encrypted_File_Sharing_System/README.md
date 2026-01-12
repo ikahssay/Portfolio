@@ -1,7 +1,7 @@
 # An End-to-End Encryption File Sharing System
 
 <h1><b> Overview </h1></b>
-In this project, I utilized <i>cryptographic primitives</i> - such as a public key encryption, hash function, HMAC, HKDF, PBKDF, digital signatures, symmetric encrypion, and random byte generators - to <b>design and implement </b> a client application for a secure file sharing system. 
+In this project, I utilized cryptographic primitives - such as a public key encryption, hash function, HMAC, HKDF, PBKDF, digital signatures, symmetric encrypion, and random byte generators - to <b>design and implement </b> a client application for a secure file sharing system. 
 
 Imagine something similar to Dropbox, but secured with end-to-end encryption. This means that no adversery nor eavesdropper can view or tamper with the client's data. This includes the server, malicious actors, Internet providers, telecom providers, or any other third party member. Only communicating users can access the cryptographic keys needed to converse and are the only people who can decrypt and access shared files.
 
