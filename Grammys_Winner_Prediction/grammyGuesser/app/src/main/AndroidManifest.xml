@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.application.cs260final">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+    <application android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" android:largeHeap="true"
+
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".MainActivity" />
+        <activity
+            android:name=".HomeScreenActivity">
+        </activity>
+        <activity
+            android:name=".Login"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>/>
+        </activity>
+
+        <activity
+            android:name=".Notifications" />
+        <activity
+            android:name=".Profile" />
+        <activity
+            android:name=".ShowDetailedPostScreen" />
+        <activity
+            android:name=".Predictions" />
+        <activity
+            android:name=".Search" />
+        <activity
+            android:name=".MakeNewPost" />
+        <activity android:name=".SavePrediction" />
+        <activity android:name=".ShowPieChart" />
+
+
+        <!-- &lt;!&ndash;&ndash;&gt;
+        <activity
+             android:name="com.application.app.modules.appnavigation.ui.AppNavigationActivity" android:screenOrientation="portrait"/>
+         <activity
+             android:name="com.application.app.modules.homescreenclickonpost.ui.HomeScreenClickOnPostActivity" android:screenOrientation="portrait"/>
+         <activity
+             android:name="com.application.app.modules.notifications.ui.NotificationsActivity" android:screenOrientation="portrait"/>
+         <activity android:exported="true"
+             android:name="com.application.app.modules.loginscreen.ui.LoginScreenActivity" android:screenOrientation="portrait">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN"/>
+                 <category android:name="android.intent.category.LAUNCHER"/>
+             </intent-filter>
+         </activity>
+         <activity
+             android:name="com.application.app.modules.homescreenmakeapost.ui.HomeScreenMakeAPostActivity" android:screenOrientation="portrait"/>
+         <activity
+             android:name="com.application.app.modules.predictions3.ui.Predictions3Activity" android:screenOrientation="portrait"/>
+         <activity
+             android:name="com.application.app.modules.profile.ui.ProfileActivity" android:screenOrientation="portrait"/>
+         <activity
+             android:name="com.application.app.modules.search1.ui.Search1Activity" android:screenOrientation="portrait"/>
+         <activity
+             android:name="com.application.app.modules.homescreen1.ui.HomeScreen1Activity" android:screenOrientation="portrait"/>
+    -->
+
+
+
+    </application>
+
+
+</manifest>

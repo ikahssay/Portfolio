@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintGroup285"
+        style="@style/groupStylegray_800"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_800">
+
+        <ImageView
+            android:id="@+id/imageXout"
+            android:layout_width="@dimen/_24pxh"
+            android:layout_height="@dimen/_24pxh"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_xout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.155" />
+
+        <Button
+            android:id="@+id/post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/amber_600"
+            android:text="Post"
+            app:icon="@drawable/img_group66"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="333dp"
+            android:hint="What's on your mind?"
+            android:textColorHint="@color/white"
+            app:boxBackgroundColor="#00FFFFFF"
+            app:boxBackgroundMode="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.36">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="@color/ic_launcher_background"
+                android:backgroundTint="@color/gray_800"
+                android:gravity="left"
+                android:inputType="textMultiLine"
+                android:textColor="@color/ic_launcher_background"
+                android:textColorHint="@color/amber_600"
+                android:textColorLink="#FFFFFF" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

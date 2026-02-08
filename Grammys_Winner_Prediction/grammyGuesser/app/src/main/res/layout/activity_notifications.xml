@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintNotifications"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylegray_800">
+
+        <ImageView
+            android:id="@+id/imageMenuButtons"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_72pxh"
+            android:layout_marginTop="@dimen/_567pxv"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_menubuttons_7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.09"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup178"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageHome"
+            android:layout_width="@dimen/_30pxh"
+            android:layout_height="@dimen/_30pxh"
+            android:layout_marginBottom="22dp"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.069"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageSearch"
+            android:layout_width="@dimen/_30pxh"
+            android:layout_height="@dimen/_30pxh"
+            android:layout_marginBottom="22dp"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.28"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView android:id="@+id/imageBellFilled"
+            android:layout_height="@dimen/_30pxh"
+            android:layout_marginBottom="@dimen/_21pxv"
+            android:layout_marginEnd="@dimen/_93pxh"
+            android:layout_marginStart="@dimen/_237pxh"
+            android:layout_marginTop="@dimen/_21pxv"
+            android:layout_width="@dimen/_30pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_bellfilled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageVote"
+            android:layout_width="@dimen/_30pxh"
+            android:layout_height="@dimen/_30pxh"
+            android:layout_marginBottom="22dp"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_vote"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+        <ImageView
+            android:id="@+id/imageProfileButton"
+            android:layout_width="@dimen/_30pxh"
+            android:layout_height="@dimen/_30pxh"
+            android:layout_marginBottom="22dp"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.927"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:clickable="true"
+            android:id="@+id/constraintGroup176"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_17pxv"
+            android:layout_width="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintGroup178"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNotifications" style="@style/groupStylegray_801">
+
+            <TextView
+                android:id="@+id/txtJohnSDownvot"
+                style="@style/txtIntermedium14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_21pxh"
+                android:layout_marginTop="@dimen/_4pxv"
+                android:layout_marginEnd="@dimen/_22pxh"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:singleLine="true"
+                android:text="@string/msg_john_s_downvot"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageForwardButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageForwardButton"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="@string/msg_john_s_downvot" />
+
+            <TextView
+                android:id="@+id/txt1Sec"
+                style="@style/txtIntermedium14_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_244pxh"
+                android:layout_marginEnd="@dimen/_9pxh"
+                android:layout_marginBottom="@dimen/_3pxv"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:singleLine="true"
+                android:text="@string/lbl_1_sec"
+                app:layout_constraintBottom_toBottomOf="@+id/imageForwardButton"
+                app:layout_constraintEnd_toEndOf="@+id/txtJohnSDownvot"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/txtJohnSDownvot"
+                app:layout_constraintTop_toBottomOf="@+id/txtJohnSDownvot"
+                app:layout_constraintVertical_bias="0.956"
+                tools:text="@string/lbl_1_sec" />
+
+            <ImageView android:clickable="true"
+                android:id="@+id/imageForwardButton"
+                android:layout_height="@dimen/_24pxh"
+                android:layout_marginBottom="@dimen/_10pxv"
+                android:layout_marginEnd="@dimen/_6pxh"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_width="@dimen/_24pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_forwardbutton_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.41"
+                app:layout_constraintStart_toEndOf="@+id/txtJohnSDownvot" app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintGroup178"
+            style="@style/groupStylegray_801"
+            android:layout_width="393dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.141">
+
+            <TextView
+                android:id="@+id/txt4Sec"
+                style="@style/txtIntermedium14_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/lbl_4_sec"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="@string/lbl_4_sec" />
+
+            <TextView
+                android:id="@+id/txtJohnSComment"
+                style="@style/txtIntermedium14"
+                android:layout_width="328dp"
+                android:layout_height="39dp"
+                android:layout_marginEnd="@dimen/_1pxh"
+                android:ellipsize="end"
+                android:text="@string/msg_john_s_comment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.343"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.454"
+                tools:text="@string/msg_john_s_comment" />
+
+            <ImageView
+                android:id="@+id/imageForwardButton1"
+                android:layout_width="@dimen/_24pxh"
+                android:layout_height="@dimen/_24pxh"
+                android:layout_marginTop="@dimen/_5pxv"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_forwardbutton_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.983"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtJohnSComment"
+                app:layout_constraintVertical_bias="0.125" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView android:ellipsize="end" android:gravity="start"
+            android:id="@+id/txtNotifications"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_21pxh"
+            android:layout_marginStart="@dimen/_21pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_width="0dp" android:singleLine="true"
+            android:text="@string/lbl_notifications"
+            app:layout_constraintBottom_toTopOf="@+id/constraintGroup176"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/txtIntermedium16" tools:text="@string/lbl_notifications"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

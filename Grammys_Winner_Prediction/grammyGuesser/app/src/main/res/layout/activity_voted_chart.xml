@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintGroup299"
+        style="@style/groupStylegray_800"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--        <androidx.viewpager2.widget.ViewPager2-->
+        <!--            android:id="@+id/viewPagerGroup127"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--             />-->
+
+        <ScrollView
+            android:id="@+id/scrollViewScrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3D3D3D"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintGroup126"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintGroup137"
+                    style="@style/groupStylegray_801"
+                    android:layout_width="410dp"
+                    android:layout_height="334dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.468">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintGroup133"
+                        android:layout_width="411dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+                            android:id="@+id/txtBestNewArtist"
+                            style="@style/txtIntermedium14"
+                            android:layout_width="167dp"
+                            android:layout_height="47dp"
+                            android:layout_marginTop="12dp"
+                            android:ellipsize="end"
+                            android:lines="2"
+                            android:singleLine="false"
+                            android:text="@string/lbl_best_new_artist"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.102"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Voted For Best New Artist" />
+
+                        <ImageView
+                            android:id="@+id/imageDownButtonFi"
+                            android:layout_width="@dimen/_24pxh"
+                            android:layout_height="@dimen/_24pxh"
+                            android:layout_marginEnd="@dimen/_4pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_downbuttonfi"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/txtSELECTPREDICTI"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtSELECTPREDICTI"
+                            style="@style/txtIntermedium11_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_43pxh"
+                            android:layout_marginTop="@dimen/_3pxv"
+                            android:layout_marginEnd="-10dp"
+                            android:layout_marginBottom="@dimen/_7pxv"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/msg_select_predicti"
+                            android:textColor="@color/white"
+                            android:textSize="13.73sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtBestNewArtist"
+                            app:layout_constraintEnd_toStartOf="@+id/imageDownButtonFi"
+                            app:layout_constraintHorizontal_bias="0.22"
+                            app:layout_constraintStart_toEndOf="@+id/txtBestNewArtist"
+                            app:layout_constraintTop_toTopOf="@+id/txtBestNewArtist"
+                            tools:text="Finneas" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <RadioButton
+                        android:id="@+id/finneas_button"
+                        android:layout_width="127dp"
+                        android:layout_height="46dp"
+                        android:buttonTint="@color/amber_600"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:singleLine="true"
+                        android:text="@string/lbl_finneas"
+                        android:textColor="@color/white_A700"
+                        android:textFontWeight="500"
+                        android:textSize="@dimen/_12pxh"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.084"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.829"
+                        tools:text="@string/lbl_finneas"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/jimmie_button"
+                        android:layout_width="136dp"
+                        android:layout_height="46dp"
+                        android:buttonTint="@color/amber_600"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:singleLine="true"
+                        android:text="@string/lbl_jimmie_allen"
+                        android:textColor="@color/white_A700"
+                        android:textFontWeight="500"
+                        android:textSize="@dimen/_12pxh"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.091"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.628"
+                        tools:text="@string/lbl_jimmie_allen" />
+
+                    <RadioButton
+                        android:id="@+id/arooj_button"
+                        android:layout_width="130dp"
+                        android:layout_height="46dp"
+                        android:buttonTint="@color/amber_600"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:singleLine="true"
+                        android:text="@string/lbl_arooj_aftab"
+                        android:textColor="@color/white_A700"
+                        android:textFontWeight="500"
+                        android:textSize="@dimen/_12pxh"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.092"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.43"
+                        tools:text="@string/lbl_arooj_aftab" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/save_prediction_button"
+                        style="@style/btnSolidRounded"
+                        android:layout_width="129dp"
+                        android:layout_height="39dp"
+                        android:layout_marginEnd="@dimen/_124pxh"
+                        android:autoText="false"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_7pxh"
+                        android:paddingTop="@dimen/_4pxv"
+                        android:paddingEnd="@dimen/_7pxh"
+                        android:paddingBottom="@dimen/_6pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_save_prediction"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/constraintGroup133"
+                        app:layout_constraintVertical_bias="0.965"
+                        tools:text="@string/lbl_save_prediction" />
+
+                    <RadioButton
+                        android:id="@+id/olivia_rodrigo_button"
+                        style="@style/txtIntermedium12"
+                        android:layout_width="131dp"
+                        android:layout_height="43dp"
+                        android:buttonTint="@color/amber_600"
+                        android:text="Olivia Rodrigo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.086"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.226" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="139dp"
+                        android:layout_height="148dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.782"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.489"
+                        app:srcCompat="@drawable/piechart" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintGroup132"
+                    style="@style/groupStylegray_801"
+                    android:layout_width="412dp"
+                    android:layout_height="58dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.19">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/second_tap_to_predict"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_18pxv"
+                        android:layout_marginEnd="@dimen/_4pxh"
+                        android:layout_marginBottom="@dimen/_19pxv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.43"
+                        app:layout_constraintStart_toEndOf="@+id/txtAlbumOfTheYe"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageForwardButton2"
+                            android:layout_width="@dimen/_24pxh"
+                            android:layout_height="@dimen/_24pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_forwardbutton_1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.33"
+                            app:layout_constraintStart_toEndOf="@+id/txtTAPTOPREDICT"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtTAPTOPREDICT"
+                            style="@style/txtIntermedium11_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7pxv"
+                            android:layout_marginEnd="@dimen/_6pxh"
+                            android:layout_marginBottom="@dimen/_6pxv"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/lbl_tap_to_predict"
+                            app:layout_constraintEnd_toStartOf="@+id/imageForwardButton2"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="@string/lbl_tap_to_predict" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/txtAlbumOfTheYe"
+                        style="@style/txtIntermedium14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20pxh"
+                        android:layout_marginTop="@dimen/_4pxv"
+                        android:layout_marginEnd="89dp"
+                        android:layout_marginBottom="@dimen/_4pxv"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/msg_album_of_the_ye"
+                        app:layout_constraintBottom_toBottomOf="@+id/second_tap_to_predict"
+                        app:layout_constraintEnd_toStartOf="@+id/second_tap_to_predict"
+                        app:layout_constraintHorizontal_bias="0.06"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/second_tap_to_predict"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:text="@string/msg_album_of_the_ye" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintGroup130"
+                    style="@style/groupStylegray_801"
+                    android:layout_width="407dp"
+                    android:layout_height="62dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.112">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/first_tap_to_predict_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.942"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.4">
+
+                        <ImageView
+                            android:id="@+id/imageForwardButton3"
+                            android:layout_width="@dimen/_24pxh"
+                            android:layout_height="@dimen/_24pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_forwardbutton_1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.33"
+                            app:layout_constraintStart_toEndOf="@+id/txtTAPTOPREDICT_2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtTAPTOPREDICT_2"
+                            style="@style/txtIntermedium11_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7pxv"
+                            android:layout_marginEnd="@dimen/_6pxh"
+                            android:layout_marginBottom="@dimen/_6pxv"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/lbl_tap_to_predict"
+                            app:layout_constraintEnd_toStartOf="@+id/imageForwardButton3"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="@string/lbl_tap_to_predict" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/txtRecordOfTheY"
+                        style="@style/txtIntermedium14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/msg_record_of_the_y"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.057"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.461"
+                        tools:text="@string/msg_record_of_the_y" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/imageMenuButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_72pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_menubuttons_7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/imageHome"
+                    android:layout_width="@dimen/_30pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginBottom="22dp"
+                    android:clickable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.069"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/imageSearch"
+                    android:layout_width="@dimen/_30pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginBottom="22dp"
+                    android:clickable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.28"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/imageBell"
+                    android:layout_width="@dimen/_30pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginStart="@dimen/_237pxh"
+                    android:layout_marginTop="@dimen/_21pxv"
+                    android:layout_marginEnd="@dimen/_93pxh"
+                    android:layout_marginBottom="@dimen/_21pxv"
+                    android:clickable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_bell"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.72"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/imageVoteFilled"
+                    android:layout_width="@dimen/_30pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginBottom="22dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_votefilled"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+                    app:layout_constraintVertical_bias="1.0" />
+
+
+                <ImageView
+                    android:id="@+id/imageProfileButton"
+                    android:layout_width="@dimen/_30pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginBottom="22dp"
+                    android:clickable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_profile"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.927"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageMenuButtons"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/txtPredictions"
+            style="@style/txtIntermedium16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_23pxh"
+            android:layout_marginEnd="@dimen/_23pxh"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:singleLine="true"
+
+            android:text="@string/lbl_predictions"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.019"
+            tools:text="@string/lbl_predictions" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/gray_800"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.054"
+            app:tabIconTint="@color/amber_600"
+            app:tabIndicatorColor="@color/amber_600"
+            app:tabIndicatorHeight="5dp"
+            app:tabRippleColor="@color/black_900_40"
+            app:tabTextAppearance="@style/txtIntermedium14"
+            app:tabTextColor="@color/gray_300">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_most_popular" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_view_all" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <!--        <com.google.android.material.tabs.TabLayout-->
+        <!--            android:id="@+id/tabLayoutGroup22"-->
+        <!--            android:layout_width="390dp"-->
+        <!--            android:layout_height="36dp"-->
+        <!--            android:layout_marginTop="@dimen/_11pxv"-->
+        <!--            android:background="#00FFFFFF"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/viewPagerGroup127"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/txtPredictions"-->
+        <!--            app:tabIndicatorColor="@color/yellow_700"-->
+        <!--            app:tabIndicatorHeight="@dimen/_4pxv"-->
+        <!--            app:tabMode="fixed"-->
+        <!--            app:tabSelectedTextColor="@color/black_900_40"-->
+        <!--            app:tabTextColor="@color/black_900_40"-->
+        <!--            />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

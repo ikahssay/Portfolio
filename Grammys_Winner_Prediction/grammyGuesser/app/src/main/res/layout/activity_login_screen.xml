@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLoginScreen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylegray_800">
+
+        <ImageView
+            android:id="@+id/imageGrammyGuessrLog"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/etUsername"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.53"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.457" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/etSolidRounded_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_55pxh"
+            android:layout_marginEnd="@dimen/_55pxh"
+            android:background="@drawable/rectangle_bg_white_a700_radius_10"
+            android:ellipsize="end"
+            android:hint="@string/lbl_password"
+            android:paddingStart="@dimen/_10pxh"
+            android:paddingTop="@dimen/_11pxv"
+            android:paddingBottom="@dimen/_12pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_password"
+            android:textColorHint="@color/gray_402"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.531" />
+
+        <EditText
+            android:id="@+id/etUsername"
+            style="@style/etSolidRounded_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_55pxh"
+            android:layout_marginEnd="@dimen/_55pxh"
+            android:background="@drawable/rectangle_bg_white_a700_radius_10"
+            android:ellipsize="end"
+            android:hint="@string/lbl_username"
+            android:paddingStart="@dimen/_10pxh"
+            android:paddingTop="@dimen/_12pxv"
+            android:paddingBottom="@dimen/_11pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_username"
+            android:textColorHint="@color/gray_402"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageGrammyGuessrLog"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageGrammyGuessrLog"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.46" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLOGIN"
+            style="@style/btnSolidRounded_1"
+            android:layout_width="110dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="@dimen/_133pxh"
+            android:layout_marginEnd="@dimen/_133pxh"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingStart="@dimen/_22pxh"
+            android:paddingTop="@dimen/_9pxv"
+            android:paddingEnd="@dimen/_22pxh"
+            android:paddingBottom="@dimen/_10pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_login"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.601"
+            tools:text="@string/lbl_login" />
+
+        <TextView
+            android:id="@+id/txtSignUp"
+            style="@style/txtInterbold14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_152pxh"
+            android:layout_marginEnd="@dimen/_152pxh"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:singleLine="true"
+            android:text="@string/lbl_sign_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.648"
+            tools:text="@string/lbl_sign_up" />
+
+        <TextView
+            android:id="@+id/txtGrammyGuessr"
+            style="@style/txtCinzelromanregular30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_320pxv"
+            android:ellipsize="end"
+            android:fontFamily="@font/cinzelcinzelromanregular400"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/lbl_grammyguessr"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageGrammyGuessrLog"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="@string/lbl_grammyguessr" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="135dp"
+            android:layout_height="205dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.154"
+            app:srcCompat="@drawable/grammyguesserlogo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
